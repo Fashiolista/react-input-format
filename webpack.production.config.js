@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
+const COMPONENT_NAME = process.env.npm_package_config_component;
 
 module.exports = {
     entry: [
@@ -35,6 +36,9 @@ module.exports = {
             }
         }),
     ],
+
+    library: COMPONENT_NAME,
+    libraryTarget: 'umd',
 
     externals: {
         react: {root: 'React', commonjs2: 'react', commonjs: 'react', amd: 'react'}

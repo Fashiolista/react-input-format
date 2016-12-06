@@ -1,6 +1,5 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
-const COMPONENT_NAME = process.env.npm_package_config_component;
 
 module.exports = {
     entry: [
@@ -11,6 +10,8 @@ module.exports = {
         filename: 'react-input-format.js',
         path: './dist',
         publicPath: '/',
+        library: 'react-input-format',
+        libraryTarget: 'umd',
     },
 
     context: resolve(__dirname, 'src'),
@@ -36,9 +37,6 @@ module.exports = {
             }
         }),
     ],
-
-    library: COMPONENT_NAME,
-    libraryTarget: 'umd',
 
     externals: {
         react: {root: 'React', commonjs2: 'react', commonjs: 'react', amd: 'react'}

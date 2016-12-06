@@ -1,2 +1,271 @@
-!function(t){function e(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return t[n].call(o.exports,o,o.exports,e),o.l=!0,o.exports}var r={};return e.m=t,e.c=r,e.i=function(t){return t},e.d=function(t,e,r){Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:r})},e.n=function(t){var r=t&&t.__esModule?function(){return t["default"]}:function(){return t};return e.d(r,"a",r),r},e.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},e.p="/",e(e.s=3)}([function(t,e,r){"use strict";function n(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function o(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function a(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}var i=r(2),s=r.n(i),u=r(1),f=function(){function t(t,e){for(var r=0;r<e.length;r++){var n=e[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}return function(e,r,n){return r&&t(e.prototype,r),n&&t(e,n),e}}(),c=function(t){function e(){n(this,e);var t=o(this,(e.__proto__||Object.getPrototypeOf(e)).call(this));return t.state=Object.assign({type:"text",format:"thousand-separator",value:"",formattedValue:""},t.props),t.availableFormatters(),t.setFormatter(),t}return a(e,t),f(e,[{key:"availableFormatters",value:function(){this.formatters={"thousand-separator":u.a}}},{key:"setFormatter",value:function(){this.formatters[this.state.format]||console.warn('Formatter "'+this.state.format+'" not found'),this.formatter=new this.formatters[this.state.format]}},{key:"onChange",value:function(t){this.state.value=this.formatter.deFormat(t.target.value),console.log("deformatted:",this.state.value),this.state.formattedValue=this.formatter.format(this.state.value),this.setState(this.state)}},{key:"render",value:function(){return s.a.createElement("div",{className:"react-input-format"},s.a.createElement("input",{type:this.state.type,value:this.state.formattedValue,onChange:this.onChange.bind(this)}))}}]),e}(s.a.Component),l=c;e["default"]=l,function(){"undefined"!=typeof __REACT_HOT_LOADER__&&(__REACT_HOT_LOADER__.register(c,"ReactInputFormat","/Users/jimmy/Websites/react-input-format/src/react-input-format.js"),__REACT_HOT_LOADER__.register(l,"default","/Users/jimmy/Websites/react-input-format/src/react-input-format.js"))}()},function(t,e,r){"use strict";function n(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}var o=function(){function t(t,e){for(var r=0;r<e.length;r++){var n=e[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}return function(e,r,n){return r&&t(e.prototype,r),n&&t(e,n),e}}(),a=function(){function t(e){n(this,t),this.props=e}return o(t,[{key:"format",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",e=t.split(".");return e[0]=e[0].replace(/\B(?=(?:\d{3})+(?!\d))/g,","),e.join(".")}},{key:"deFormat",value:function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",e=/(^([0-9]|,)+(\.?[0-9]{0,2})?)/g,r=t.match(e);return(r&&r.join("")||"").replace(/,/g,"")}}]),t}();e.a=a,function(){"undefined"!=typeof __REACT_HOT_LOADER__&&__REACT_HOT_LOADER__.register(a,"default","/Users/jimmy/Websites/react-input-format/src/formatters/thousand-separator.js")}()},function(t,e){t.exports=void 0},function(t,e,r){t.exports=r(0)}]);
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("react"));
+	else if(typeof define === 'function' && define.amd)
+		define(["react"], factory);
+	else if(typeof exports === 'object')
+		exports["react-input-format"] = factory(require("react"));
+	else
+		root["react-input-format"] = factory(root["React"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmory exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		Object.defineProperty(exports, name, {
+/******/ 			configurable: false,
+/******/ 			enumerable: true,
+/******/ 			get: getter
+/******/ 		});
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__formatters_thousand_separator__ = __webpack_require__(1);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var ReactInputFormat = function (_React$Component) {
+    _inherits(ReactInputFormat, _React$Component);
+
+    function ReactInputFormat() {
+        _classCallCheck(this, ReactInputFormat);
+
+        var _this = _possibleConstructorReturn(this, (ReactInputFormat.__proto__ || Object.getPrototypeOf(ReactInputFormat)).call(this));
+
+        _this.state = Object.assign({
+            type: 'text',
+            format: 'thousand-separator',
+            value: '',
+            formattedValue: ''
+        }, _this.props);
+
+        _this.availableFormatters();
+        _this.setFormatter();
+        return _this;
+    }
+
+    _createClass(ReactInputFormat, [{
+        key: 'availableFormatters',
+        value: function availableFormatters() {
+            this.formatters = {
+                'thousand-separator': __WEBPACK_IMPORTED_MODULE_1__formatters_thousand_separator__["a" /* default */]
+            };
+        }
+    }, {
+        key: 'setFormatter',
+        value: function setFormatter() {
+            if (!this.formatters[this.state.format]) {
+                console.warn('Formatter "' + this.state.format + '" not found');
+            }
+
+            this.formatter = new this.formatters[this.state.format]();
+        }
+    }, {
+        key: 'onChange',
+        value: function onChange(e) {
+            this.state.value = this.formatter.deFormat(e.target.value);
+
+            console.log('deformatted:', this.state.value);
+
+            this.state.formattedValue = this.formatter.format(this.state.value);
+
+            this.setState(this.state);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'react-input-format' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: this.state.type, value: this.state.formattedValue, onChange: this.onChange.bind(this) })
+            );
+        }
+    }]);
+
+    return ReactInputFormat;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+var _default = ReactInputFormat;
+/* harmony default export */ exports["default"] = _default;
+;
+;
+
+(function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(ReactInputFormat, 'ReactInputFormat', '/Users/jimmy/Websites/react-input-format/src/react-input-format.js');
+
+    __REACT_HOT_LOADER__.register(_default, 'default', '/Users/jimmy/Websites/react-input-format/src/react-input-format.js');
+})();
+
+;
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var _default = function () {
+
+    /**
+     * Constructor
+     *
+     * @param props
+     */
+    function _default(props) {
+        _classCallCheck(this, _default);
+
+        this.props = props;
+    }
+
+    /**
+     * Format string
+     *
+     * @param input
+     * @returns {string}
+     */
+
+
+    _createClass(_default, [{
+        key: 'format',
+        value: function format() {
+            var input = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+            var parts = input.split('.');
+            parts[0] = parts[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+
+            return parts.join('.');
+        }
+
+        /**
+         * Deformat formatted text back to computer readable
+         *
+         * @param input
+         * @returns {string}
+         */
+
+    }, {
+        key: 'deFormat',
+        value: function deFormat() {
+            var input = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+            var format = /(^([0-9]|,)+(\.?[0-9]{0,2})?)/g,
+                parts = input.match(format);
+
+            return (parts && parts.join('') || '').replace(/,/g, '');
+        }
+    }]);
+
+    return _default;
+}();
+
+/**
+ * Thousand separator formatter
+ */
+/* harmony default export */ exports["a"] = _default;
+;
+
+(function () {
+    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+        return;
+    }
+
+    __REACT_HOT_LOADER__.register(_default, 'default', '/Users/jimmy/Websites/react-input-format/src/formatters/thousand-separator.js');
+})();
+
+;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(0);
+
+
+/***/ }
+/******/ ])
+});
+;
 //# sourceMappingURL=react-input-format.js.map

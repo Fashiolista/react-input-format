@@ -85,7 +85,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var ReactInputFormat = function (_React$Component) {
+module.exports = function (_React$Component) {
     _inherits(ReactInputFormat, _React$Component);
 
     function ReactInputFormat() {
@@ -145,20 +145,12 @@ var ReactInputFormat = function (_React$Component) {
 
     return ReactInputFormat;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-var _default = ReactInputFormat;
-/* harmony default export */ exports["default"] = _default;
-;
 ;
 
 (function () {
     if (typeof __REACT_HOT_LOADER__ === 'undefined') {
         return;
     }
-
-    __REACT_HOT_LOADER__.register(ReactInputFormat, 'ReactInputFormat', '/Users/jimmy/Websites/react-input-format/src/react-input-format.js');
-
-    __REACT_HOT_LOADER__.register(_default, 'default', '/Users/jimmy/Websites/react-input-format/src/react-input-format.js');
 })();
 
 ;

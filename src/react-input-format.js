@@ -3,7 +3,7 @@ import React from 'react';
 import ThousandSeparatorFilter from './formatters/thousand-separator';
 
 
-export default class ReactInputFormat extends React.Component {
+module.exports = class ReactInputFormat extends React.Component {
     constructor () {
         super();
 

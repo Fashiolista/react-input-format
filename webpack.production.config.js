@@ -11,7 +11,7 @@ module.exports = {
         path: './dist',
         publicPath: '/',
         library: 'react-input-format',
-        libraryTarget: 'commonjs2',
+        libraryTarget: 'umd',
     },
 
     context: resolve(__dirname, 'src'),

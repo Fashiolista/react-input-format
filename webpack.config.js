@@ -2,15 +2,16 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: [
-        'react-hot-loader/patch',
-        'webpack-dev-server/client?http://localhost:8080',
-        'webpack/hot/only-dev-server',
-        './react-input-format.js',
-    ],
+    entry: {
+        'react-hot-loader/patch': 'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:8080': 'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server': 'webpack/hot/only-dev-server',
+        'react-input-format': './react-input-format.js',
+        'index': './index.js',
+    },
 
     output: {
-        filename: 'react-input-format.js',
+        filename: '[name].js',
         path: './dist',
         publicPath: '/',
     },
@@ -41,8 +42,5 @@ module.exports = {
         // new webpack.optimize.UglifyJsPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new webpack.ProvidePlugin({
-            React: "react",
-        }),
     ],
 };

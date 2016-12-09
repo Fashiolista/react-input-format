@@ -10,7 +10,12 @@ class App {
     }
 
     render () {
-        ReactDOM.render(<InputFormat format="thousand-seperator"/>, document.querySelector('.react-component__input-format'));
+        ReactDOM.render(<InputFormat
+            format="percentage"
+            defaultValue={0}
+            formatterProps={{factor: 0.01, decimals: 0}}
+            onChange={e => {console.log("Updated with", e.value)}}
+        />, document.querySelector('.react-component__input-format'));
     }
 }
 

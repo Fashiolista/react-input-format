@@ -1,5 +1,5 @@
 /**
- * Thousand separator formatter
+ * Thousand separated formatter
  */
 export default class {
 
@@ -10,6 +10,17 @@ export default class {
      */
     constructor (props) {
         this.props = props;
+    }
+
+    /**
+     * Return properties specific for this formatter
+     *
+     * @returns {}
+     */
+    getProps () {
+        return {
+
+        }
     }
 
     /**

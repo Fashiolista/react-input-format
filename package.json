@@ -1,7 +1,7 @@
 {
   "name": "react-input-format",
   "version": "1.0.0",
-  "description": "",
+  "description": "React component for formatted inputs",
   "main": "dist/react-input-format.js",
   "scripts": {
     "build": "webpack",
@@ -9,7 +9,7 @@
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Jimmy James <jimmy@imagency.com>",
   "license": "MIT",
   "devDependencies": {
     "babel": "^6.5.2",

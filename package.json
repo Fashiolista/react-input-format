@@ -1,6 +1,6 @@
 {
   "name": "react-input-format",
-  "version": "1.0.2",
+  "version": "1.0.2a",
   "description": "React component for formatted inputs",
   "main": "dist/react-input-format.js",
   "scripts": {

@@ -30,7 +30,7 @@ export default class {
      * @returns {string}
      */
     format (input = '') {
-        let parts = input.split('.');
+        let parts = String(input).split('.');
         parts[0] = parts[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
 
         return parts.join('.');

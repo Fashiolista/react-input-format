@@ -19,7 +19,7 @@ import InputFormat from 'react-input-format';
 export default class MyComponent extends React.Component {
 	render () {
     	return (
-        	<InputFormat format="thousand-separator" onChange={e => {console.log(e)}} />
+        	<InputFormat format="thousand-separated" onChange={e => {console.log(e)}} />
         )
     }
 }
@@ -30,7 +30,7 @@ export default class MyComponent extends React.Component {
 
 - `format`
 	- String
-	- The formatter decired   *(required)*
+	- The formatter desired   *(required)*
 - `defaultValue`
 	- Number
 - `formatterProps`
@@ -42,7 +42,7 @@ export default class MyComponent extends React.Component {
 
 ### Formatters
 
-`thousand-separator`
+`thousand-separated`
 
 Formats numbers larger than a thousand with a comma for easier reading. Currently hardcoded to a comma format, with the dot indicating decimals. Custom separators will come, I promise.
 

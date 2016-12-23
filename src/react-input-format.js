@@ -47,6 +47,41 @@ class ReactInputFormat extends React.Component {
         }, props);
     }
 
+
+    /**
+     * Called when receiving new props
+     * Updates state and called for new formatter (or formatter props) if
+     * needed
+     *
+     * @param  {Object} props
+     * @return {Boolean|Void}
+     */
+    componentWillReceiveProps (props) {
+        if (this.state.format === props.format
+            && this._objEqual(this.state.formatterProps, props.formatterProps)) {
+            return;
+        }
+
+        this.setState({
+            format: props.format,
+            formatterProps: props.formatterProps
+        });
+
+        this.setFormatter(props.format);
+    }
+
+
+    /**
+     * Checks if objects are identical
+     *
+     * @param  {Object} objA
+     * @param  {Object} objB
+     * @return {Boolean}
+     */
+    _objEqual (objA, objB) {
+        return JSON.stringify(objA) === JSON.stringify(objB);
+    }
+
     /**
      * React component mounted
      */
@@ -68,12 +103,14 @@ class ReactInputFormat extends React.Component {
     /**
      * Set formatter, based on user props
      */
-    setFormatter () {
-        if (!this.formatters[this.state.format]) {
-            return console.warn(`Formatter "${this.state.format}" not found`);
+    setFormatter (formatterArg = false) {
+        const formatter = formatterArg ? formatterArg : this.state.format;
+
+        if (!this.formatters[formatter]) {
+            return console.warn(`Formatter "${formatter}" not found`);
         }
 
-        this.formatter = new this.formatters[this.state.format](this.props.formatterProps);
+        this.formatter = new this.formatters[formatter](this.props.formatterProps);
 
         this.setState({
             formattedValue: this.formatter.format(this.state.value)

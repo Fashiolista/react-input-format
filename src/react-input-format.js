@@ -67,7 +67,7 @@ class ReactInputFormat extends React.Component {
             formatterProps: props.formatterProps
         });
 
-        this.setFormatter(props.format);
+        this.setFormatter(props.format, props);
     }
 
 
@@ -100,17 +100,24 @@ class ReactInputFormat extends React.Component {
         }
     }
 
+
     /**
-     * Set formatter, based on user props
+     *  Set formatter, based on user props
+     *
+     * @param  {String} formatterArg
+     * @param  {Object} props
      */
-    setFormatter (formatterArg = false) {
-        const formatter = formatterArg ? formatterArg : this.state.format;
+    setFormatter (formatter = false, props = false) {
+        formatter = formatter ? formatter : this.state.format;
+        props = props ? props : this.props;
 
         if (!this.formatters[formatter]) {
             return console.warn(`Formatter "${formatter}" not found`);
         }
 
-        this.formatter = new this.formatters[formatter](this.props.formatterProps);
+        this.formatter = new this.formatters[formatter](props.formatterProps);
+
+        console.log('blaa', this.formatter.format(this.state.value), props.formatterProps);
 
         this.setState({
             formattedValue: this.formatter.format(this.state.value)

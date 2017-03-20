@@ -117,8 +117,6 @@ class ReactInputFormat extends React.Component {
 
         this.formatter = new this.formatters[formatter](props.formatterProps);
 
-        console.log('blaa', this.formatter.format(this.state.value), props.formatterProps);
-
         this.setState({
             formattedValue: this.formatter.format(this.state.value)
         });
